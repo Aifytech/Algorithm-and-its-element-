@@ -1,0 +1,26 @@
+ALGORITHM SentenceAnalysis
+VAR
+    char_count: INTEGER <- 0
+    word_count: INTEGER <- 1
+    vowel_count: INTEGER <- 0
+    sentence: STRING
+    ch: CHAR
+BEGIN
+    WRITE "Enter a sentence ending with a period:"
+    READ sentence
+
+    FOR EACH ch IN sentence DO
+        char_count <- char_count + 1
+
+        IF ch IN ['a','e','i','o','u','A','E','I','O','U'] THEN
+            vowel_count <- vowel_count + 1
+        END IF
+        IF ch = ' ' THEN
+            word_count <- word_count + 1
+        END IF
+    END FOR
+
+    OUTPUT "Total characters: ", char_count
+    OUTPUT "Total words: ", word_count
+    OUTPUT "Total vowels: ", vowel_count
+END
